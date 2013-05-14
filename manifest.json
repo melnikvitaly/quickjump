@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+
+  "name": "QuickJump",
+  "description": "Quick jumps to sites",
+  "version": "0.1.2",
+  "icons": { "128": "images/icon.png" },
+  "background": {
+    "scripts": ["scripts/klass/klass.js","scripts/eventController.js","scripts/baseview.js","scripts/models.js","scripts/config.js","scripts/init.js"],
+	"persistent": false
+  },
+  "permissions": [
+    "tabs",
+	"contextMenus"
+  ],
+  "browser_action": {
+    "default_icon": "images/icon.png",
+    "default_popup": "popup.html"
+  }
+}
