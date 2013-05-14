@@ -1,0 +1,15 @@
+D:\q\quickjump\skypeext\Src\QuickJump\QuickJump\bin\Debug\QuickJump.exe
+D:\q\quickjump\skypeext\Src\QuickJump\QuickJump\bin\Debug\QuickJump.pdb
+D:\q\quickjump\skypeext\Src\QuickJump\QuickJump\bin\Debug\Interop.SKYPE4COMLib.dll
+D:\q\quickjump\skypeext\Src\QuickJump\QuickJump\obj\Debug\QuickJump.csprojResolveAssemblyReference.cache
+D:\q\quickjump\skypeext\Src\QuickJump\QuickJump\obj\Debug\Interop.SKYPE4COMLib.dll
+D:\q\quickjump\skypeext\Src\QuickJump\QuickJump\obj\Debug\QuickJump.csproj.ResolveComReference.cache
+D:\q\quickjump\skypeext\Src\QuickJump\QuickJump\obj\Debug\MainWindow.baml
+D:\q\quickjump\skypeext\Src\QuickJump\QuickJump\obj\Debug\MainWindow.g.cs
+D:\q\quickjump\skypeext\Src\QuickJump\QuickJump\obj\Debug\App.g.cs
+D:\q\quickjump\skypeext\Src\QuickJump\QuickJump\obj\Debug\QuickJump_MarkupCompile.cache
+D:\q\quickjump\skypeext\Src\QuickJump\QuickJump\obj\Debug\QuickJump.g.resources
+D:\q\quickjump\skypeext\Src\QuickJump\QuickJump\obj\Debug\QuickJump.Properties.Resources.resources
+D:\q\quickjump\skypeext\Src\QuickJump\QuickJump\obj\Debug\QuickJump.csproj.GenerateResource.Cache
+D:\q\quickjump\skypeext\Src\QuickJump\QuickJump\obj\Debug\QuickJump.exe
+D:\q\quickjump\skypeext\Src\QuickJump\QuickJump\obj\Debug\QuickJump.pdb
