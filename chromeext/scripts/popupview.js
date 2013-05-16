@@ -13,13 +13,15 @@ methods({
 			var buttonsContainer=$("#buttons-contaner");
 			for(var i in providers){
 				var provider=providers[i];
-				var goButton=$("<button type='button'/>").html(provider.name);
 				
-				goButton.click(function(){
-					var param=$("#parametertext").val();
-					self.controller.onProviderActionClicked(provider,param);
-					
-				})
+				var goButton=$("<button type='button'/>").html(provider.shortDisplayText);				
+				goButton.click(function(prov){
+					return function()
+					{						
+						var param=$("#parametertext").val();
+						self.controller.onProviderActionClicked(prov,param);
+					};					
+				}(provider));
 				buttonsContainer.append(goButton);
 			}
 		}

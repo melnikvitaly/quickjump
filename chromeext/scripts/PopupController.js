@@ -1,16 +1,16 @@
 function PopupController(view)
 {
+	var self=this;
 	this.model=new Models();
 	this.view=view;
 	view.controller=this;	
-	
+	debugger;
 	this.onProviderActionClicked = function (provider, param){
-		if(param){
-			var link=provider.getActionUrl(param);	
-			view.createTab(link);
+		if(provider){
+			provider.execute(self.view,[param]);				
 		}
 	};
-	
-	this.view.initProviders(this.model.providers);
+	console.log("call init providers");
+	this.view.initProviders(this.model.getProviders());
 };
 

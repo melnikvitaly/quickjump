@@ -3,10 +3,15 @@
 
   "name": "QuickJump",
   "description": "Quick jumps to sites",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "icons": { "128": "images/icon.png" },
+  "content_scripts": [{
+	"all_frames": true,
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["scripts/content_script.js"]	
+  }],
   "background": {
-    "scripts": ["scripts/klass/klass.js","scripts/eventController.js","scripts/baseview.js","scripts/models.js","scripts/config.js","scripts/init.js"],
+    "scripts": ["scripts/klass/klass.js","scripts/jquery/jquery-2.0.0.min.js","scripts/exceptions.js","scripts/providers.js","scripts/eventController.js","scripts/baseview.js","scripts/models.js","scripts/config.js","scripts/init.js"],
 	"persistent": false
   },
   "permissions": [

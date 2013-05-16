@@ -2,7 +2,7 @@ var BaseView=klass(function ()
 {
 })
 .methods({
-	createTab : function(url){
+	navigateTo : function(url){
 		chrome.tabs.create({url:url});	
 	}
 });
