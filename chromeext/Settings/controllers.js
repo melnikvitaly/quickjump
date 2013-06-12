@@ -1,6 +1,5 @@
-function ViewCtrl($scope){
+function ViewCtrl($scope,providersService){
     var self=this;
-    this.model=new Models();
     $scope.save= function(){
         alert("save");
     };
@@ -10,9 +9,7 @@ function ViewCtrl($scope){
     $scope.edit=function(pvd){
         window.location="#/editpvd/"+pvd.id;
     }
-
-    $scope.types=this.model.getTypes();
-    $scope.providers=this.model.getProviders();
+    $scope.providers=providersService.providers;
 
 }
 function ChoosePvdTypeCtrl($scope){
