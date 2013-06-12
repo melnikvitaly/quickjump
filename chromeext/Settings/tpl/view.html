@@ -1,0 +1,23 @@
+<div ng-model="types">
+    <h2>All Providers</h2>
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>ActionUrl</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="pvd in providers">
+                    <td>{{pvd.name}}</td>
+                    <td>{{pvd.type}}</td>
+                    <td>{{pvd.actionUrl}}</td>
+                    <td><button ng-click="edit(pvd)"/>></td>
+                </tr>
+            </tbody>
+        </table>
+        <button ng-click="addNewPvd()">Add new provider</button>
+    </div>
+</div>

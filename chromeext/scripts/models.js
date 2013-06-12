@@ -15,7 +15,10 @@ function Models(){
 				};
 			}
 			return self._providers;
-		}			
+		};
+    this.getTypes=function getKnownActionTypes(){
+        return ["urlAction"];
+        };
 };	
 
 

@@ -11,15 +11,26 @@
     "js": ["scripts/content_script.js"]	
   }],
   "background": {
-    "scripts": ["scripts/klass/klass.js","scripts/jquery/jquery-2.0.0.min.js","scripts/exceptions.js","scripts/providers.js","scripts/eventController.js","scripts/baseview.js","scripts/models.js","scripts/config.js","scripts/init.js"],
+    "scripts": [
+        "scripts/klass/klass.js",
+        "scripts/jquery/jquery-2.0.0.min.js",
+        "scripts/exceptions.js",
+        "scripts/providers.js",
+        "scripts/eventController.js",
+        "scripts/baseview.js",
+        "scripts/models.js",
+        "scripts/config.js",
+        "scripts/init.js"],
 	"persistent": false
   },
   "permissions": [
     "tabs",
 	"contextMenus"
   ],
+  "options_page": "/settings/settings.html",
   "browser_action": {
     "default_icon": "images/icon.png",
-    "default_popup": "popup.html"
-  }
+    "default_popup": "popup/popup.html"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }

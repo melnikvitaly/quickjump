@@ -62,6 +62,7 @@ var UrlActionProvider=BaseProvider.extend(function(config){
 	this.actionUrl=config.actionUrl;
 	this.paramRegex=config.paramRegex;
 	this.defaultUrl=config.defaultUrl;
+    this.type="Url action";
 })
 .methods({
 	processParams: function (params){

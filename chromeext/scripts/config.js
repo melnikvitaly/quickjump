@@ -1,4 +1,3 @@
-console.log("config.js");
 function getProvidersConfig(){
 var res=[
 	{
@@ -24,5 +23,10 @@ var res=[
 		defaultUrl:"https://github.com/workshare/ws7"
 	}
 ];
-return res;};
+
+
+return res;
+};
+
+
 
