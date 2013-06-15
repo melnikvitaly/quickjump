@@ -1,15 +1,28 @@
+var URLACTION_T="urlAction";
 var BaseProvider=klass(function(config){
 	this.id=config.id;
-	this.name=config.name;
-	this.displayText=config.displayText;
-	this.formatDisplayText=config.formatDisplayText;
-	this.shortDisplayText=config.shortDisplayText;
+	this.name=config.n;
+	this.displayText=config.dT;
+	this.formatDisplayText=config.fDT;
+	this.shortDisplayText=config.sDT;
+	this.type=config.t
 	this._listeners=[];
 	this._listeners["onerror"]=[];
 })
 .methods({
-	execute:function(){throw new NotImplException();},
-	getMenuDisplayText:function (params){
+	serialize:function(){
+			var res={};
+			res.id=this.id;
+			res.t=this.type
+			res.n=this.name;
+			res.dT=this.displayText;
+			res.fDT=this.formatDisplayText;
+			res.sDT=this.shortDisplayText;
+			
+			return res;
+		},
+		
+	getMenuDisplayTextInternal:function (params){
 		var res=this.displayText;
 		if(params){
 			res=this.formatDisplayText;
@@ -59,12 +72,19 @@ var BaseProvider=klass(function(config){
 });
 
 var UrlActionProvider=BaseProvider.extend(function(config){	
-	this.actionUrl=config.actionUrl;
-	this.paramRegex=config.paramRegex;
-	this.defaultUrl=config.defaultUrl;
-    this.type="Url action";
+    
+	this.actionUrl=config.aU;
+	this.paramRegex=config.pR;
+	this.defaultUrl=config.dU;
 })
 .methods({
+serialize:function(){
+		var res=this.supr();
+		res.aU=this.actionUrl;
+		res.pR=this.paramRegex;
+		res.dU=this.defaultUrl;
+		return res;
+	},
 	processParams: function (params){
 							var res=[];
 							for(var i in params){
@@ -78,21 +98,22 @@ var UrlActionProvider=BaseProvider.extend(function(config){
 							}
 							return res;
 						},
-	execute : function(view,params,ctx){
-		var processed=this.processParams(params);
+	execute : function(ctx){
+		var processed=this.processParams(ctx.params);
 		var param=processed[0];
+		var url="";
 		if(param){
-			view.navigateTo(this.actionUrl.replace("{0}",param));
+			url=this.actionUrl.replace("{0}",param);
 		}
 		else{
-			view.navigateTo(this.defaultUrl);
+			url=this.defaultUrl;
 		}		
+		chrome.tabs.create({url:url});	
 	},
 	
-	getMenuDisplayText:function(params){		
-		var processed=this.processParams(params);
-		return this.supr(processed);
+	getMenuDisplayText:function(ctx){		
+		var processed=this.processParams(ctx.params);
+		return this.getMenuDisplayTextInternal(processed);
 	}
-	
 });
 

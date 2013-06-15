@@ -1,31 +1,48 @@
-function ViewCtrl($scope,providersService){
-    var self=this;
-    $scope.save= function(){
-        alert("save");
-    };
+function ViewCtrl($scope,settingStorage,settingsService){    
+	$scope.providers=[];
+	
     $scope.addNewPvd=function(){
+		settingsService.mode="new";
         window.location = "#/choosenew";
     }
     $scope.edit=function(pvd){
-        window.location="#/editpvd/"+pvd.id;
-    }
-    $scope.providers=providersService.providers;
-
+		settingsService.mode="edit";
+		settingsService.editId=pvd.id;
+        window.location="#/editpvd";
+    };
+	$scope.refreshProviders=function(){
+		settingStorage.getProviders(function(val){
+			Utils.apply($scope,function(){
+				Utils.syncArrays($scope.providers,val,"id");
+			});				
+		});
+	};
+	
+	$scope.refreshProviders();
 }
-function ChoosePvdTypeCtrl($scope){
-    this.model=new Models();
-    $scope.types=this.model.getTypes();
+function ChoosePvdTypeCtrl($scope,settingStorage,settingsService){
+    $scope.types=[];
+	
     $scope.select=function(type){
-        window.location = "#/createpvd/"+type;
+		settingsService.type=type;
+        window.location = "#/createpvd";
     }
     $scope.back=function(){
         window.location = "#/";
     }
+	$scope.refreshTypes=function(){
+		settingStorage.getTypes(function(val){
+			Utils.apply($scope,function(){
+				Utils.syncArrays($scope.types,val);
+			});
+		});
+	}
+	
+	$scope.refreshTypes();
 }
 
-function EditPvdCtrl($scope,$routeParams){
-    this.model=new Models();
-    $scope.isNew=$routeParams.type!==undefined;
+function EditPvdCtrl($scope,settingsService){    
+    $scope.isNew=settingsService.mode!="edit";
     $scope.back=function(){
             if($scope.isNew){
                 window.location = "#/choosenew";

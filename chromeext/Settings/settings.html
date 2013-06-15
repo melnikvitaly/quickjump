@@ -1,14 +1,19 @@
 <!doctype html>
 <html ng-app="settingsApp">
   <head>
-    <script src="/scripts/klass/klass.js"></script>
+	<script src="/third/angular/angular.js"></script>
+    <script src="/third/klass/klass.js"></script>
+	
+	<script src="/scripts/utils.js"></script>	
+	<script src="/scripts/providers.js"></script>
 	<script src="/scripts/config.js"></script>
-	<script src="/scripts/models.js"></script>
-      <script src="/scripts/providers.js"></script>
-    <script src="/scripts/angular/angular.js"></script>
-    <script src="/settings/app.js"></script>
-    <script src="/settings/controllers.js"></script>
-      <script src="/settings/services.js"></script>
+	
+	<script src="/settings/app.js"></script>
+	
+	<script src="/services/settingStorage.js"></script>
+    
+	<script src="/settings/services.js"></script>
+	<script src="/settings/controllers.js"></script>
   </head>
   <body>
     <ng-view>

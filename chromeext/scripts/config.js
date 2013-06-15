@@ -1,26 +1,28 @@
+
+
 function getProvidersConfig(){
 var res=[
 	{
-		type:"urlAction",
+		t:URLACTION_T,
 		id:"fogbugz",
-		name:"fogbugz",
-		displayText: "Find  Item  on FogBugz",
-		formatDisplayText: "FogBugz. Jump to item ID={0}",
-		shortDisplayText: "FogBugz",
-		actionUrl:"https://workshare.fogbugz.com/?{0}",
-		paramRegex: /[0-9]+/,
-		defaultUrl: "https://workshare.fogbugz.com"
+		n:"fogbugz",
+		dT: "Find  Item  on FogBugz",
+		fDT: "FogBugz. Jump to item ID={0}",
+		sDT: "FogBugz",
+		aU:"https://workshare.fogbugz.com/?{0}",
+		pR: "[0-9]+",
+		dU: "https://workshare.fogbugz.com"
 	},
 	{
-		type:"urlAction",
+		t:URLACTION_T,
 		id:"workshareGitHub",
-		name:"workshareGitHub",
-		displayText: "Jump to WSP",
-		formatDisplayText: "WSP. Jump to branch 'task-{0}'",
-		shortDisplayText: "WSP GitHub",
-		actionUrl:"https://github.com/workshare/ws7/commits/task-{0}",
-		paramRegex: /[0-9]+/,
-		defaultUrl:"https://github.com/workshare/ws7"
+		n:"workshareGitHub",
+		dT: "Jump to WSP",
+		fDT: "WSP. Jump to branch 'task-{0}'",
+		sDT: "WSP GitHub",
+		aU:"https://github.com/workshare/ws7/commits/task-{0}",
+		pR: "[0-9]+",
+		dU:"https://github.com/workshare/ws7"
 	}
 ];
 

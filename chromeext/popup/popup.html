@@ -1,54 +1,26 @@
 <!doctype html>
 <html>
   <head>
-    <title>Getting Started Extension's Popup</title>
-    <style>
-      body {
-        min-width: 100px;
-        overflow-x: hidden;
-      }
-
-      img {
-        margin: 5px;
-        border: 2px solid black;
-        vertical-align: middle;
-        width: 75px;
-        height: 75px;
-      }
-    </style>
-
-    <!--
-      - JavaScript and HTML must be in separate files: see our Content Security
-      - Policy documentation[1] for details and explanation.
-      -
-      - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
-     -->
+    <title>Quick Jump</title>
+  
+	<script src="/third/angular/angular.js"></script>
+	<script src="/third/angular/angular-ui.js"></script>
+	<script src="/third/klass/klass.js"></script>	
 	
-	<script src="/scripts/klass/klass.js"></script>
-	<script src="/scripts/jquery/jquery-2.0.0.min.js"></script>
-	<script src="/scripts/exceptions.js"></script>
+	<script src="/scripts/utils.js"></script>    	
 	<script src="/scripts/providers.js"></script>
 	<script src="/scripts/config.js"></script>
-	<script src="/scripts/models.js"></script>
-	<script src="/scripts/baseview.js"></script>
-    <script src="/popup/popupview.js"></script>
-	<script src="/popup/PopupController.js"></script>
-	<link rel="stylesheet" type="text/css" href="../../css/main.css">
+	
+	<script src="/popup/app.js"></script>
+	    
+	<script src="/services/settingStorage.js"></script>		
+	<script src="/popup/services.js"></script>		
+	
+	<script src="/popup/controllers.js"></script>
   </head>
-  <body>
-	  <div id="main">
-		<table>
-			<tr>
-				<td>
-					<input id="parametertext" type="text" /></td>
-				<td>
-					<div id="buttons-contaner">
-		
-					</div>
-				</td>
-			</tr>
-		</table>
-	  </div>
+  <body ng-app="popupApp">
+	    <ng-view>
+		</ng-view>
   </body>
 </html>
 
