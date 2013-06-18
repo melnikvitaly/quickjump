@@ -6,8 +6,7 @@ var BaseProvider=klass(function(config){
 	this.formatDisplayText=config.fDT;
 	this.shortDisplayText=config.sDT;
 	this.type=config.t
-	this._listeners=[];
-	this._listeners["onerror"]=[];
+	this.enabled=config.e=="true";
 })
 .methods({
 	serialize:function(){
@@ -18,7 +17,7 @@ var BaseProvider=klass(function(config){
 			res.dT=this.displayText;
 			res.fDT=this.formatDisplayText;
 			res.sDT=this.shortDisplayText;
-			
+			res.e=this.enabled?"true":"false";
 			return res;
 		},
 		
@@ -39,35 +38,6 @@ var BaseProvider=klass(function(config){
 			}
 		}		
 		return res;
-	},
-	addEventListener:function(eventname,listener){
-	
-		if(this._listeners[eventname]){
-			if(listener){
-				this._listeners[eventname].push(listener);
-			}
-		}
-		else{
-			throw new Exception("no such event - "+eventname);
-		}
-	},
-	removeEventListener:function(eventname,listener){
-	
-		if(this._listeners[eventname]){
-			if(listener){
-				this._listeners[eventName].splice($.inArray(removeItem, y), 1 );
-			}
-		}
-		else{
-			throw new Exception("no such event - "+eventname);
-		}
-	},
-	
-	raiseError: function(error){
-		for(var i in this._listeners["onerror"]){
-			var listener=this._listeners["onerror"][i];
-			if(listener) listener(this,{message:text});
-		}
 	}
 });
 

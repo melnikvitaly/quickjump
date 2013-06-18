@@ -9,7 +9,7 @@ function MainCtrl($scope, popupService,settingStorage){
 		$scope.providers[0].execute({params:[$scope.param]});						
 	};		
 	$scope.refreshProviders=function(){
-		settingStorage.getProviders(function(val){
+		settingStorage.getEnabledProviders(function(val){
 			Utils.apply($scope,function(){
 				Utils.syncArrays($scope.providers,val,"id");
 			});				

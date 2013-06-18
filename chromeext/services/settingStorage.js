@@ -11,8 +11,7 @@ dsApp.factory("settingStorage",function($rootScope){
 			}
 		}
 		return res;
-	}
-	
+	}	
 	self.getProviders=function(callback){
 				var data=chrome.storage.sync.get("s", function(obj){						
 						if(obj.s){							
@@ -24,11 +23,19 @@ dsApp.factory("settingStorage",function($rootScope){
 					});			
 				
 		};
+		self.getEnabledProviders=function (callback){
+			debugger;
+			self.getProviders(function(val){			
+				callback(val.filter(function (o){
+					return o.enabled;
+				}));
+			});
+		},
 		self.getTypes=function(callback){
 			callback([URLACTION_T]);				
 		};
 		
-	self.saveProvider=function(pvd){
+	self.saveProvider=function(pvd,callback){
 			var data=chrome.storage.sync.get('s',function(val){
 					if(val.s && !val.s.providers){
 						val.s=null;
@@ -37,22 +44,17 @@ dsApp.factory("settingStorage",function($rootScope){
 					var existed=Utils.getByProp(obj.providers,"id",pvd.id);
 					if(existed){			
 							var index = obj.providers.indexOf(existed);
-							obj.providers.splice(index, 1);
-					}						
-					
-					obj.providers.push(pvd.serialize());
+							obj.providers[index]=pvd.serialize();
+					}
+					else{										
+						obj.providers.push(pvd.serialize());
+					}
 								
-					chrome.storage.sync.set({'s':obj});	
+					chrome.storage.sync.set({'s':obj},callback);	
 				});								
 		}
 		
-		var providers=getProvidersConfig();
-		for(var i in providers){
-			var provider=providers[i];
-		    if(provider.t==URLACTION_T){
-			  this.saveProvider(new UrlActionProvider(providers[i]));
-			}
-		};
+		
 }});	
 
 

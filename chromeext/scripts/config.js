@@ -1,8 +1,9 @@
 
 
-function getProvidersConfig(){
+function getTemplates(){
 var res=[
 	{
+		e:"true",
 		t:URLACTION_T,
 		id:"fogbugz",
 		n:"fogbugz",
@@ -14,6 +15,7 @@ var res=[
 		dU: "https://workshare.fogbugz.com"
 	},
 	{
+		e:"false",
 		t:URLACTION_T,
 		id:"workshareGitHub",
 		n:"workshareGitHub",

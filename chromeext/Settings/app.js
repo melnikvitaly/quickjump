@@ -5,7 +5,7 @@ var dsApp=angular.module('settingsApp', []).
        /*     when('/edit/:projectId', {controller:EditCtrl, templateUrl:'detail.html'}).*/
             when('/choosenew', {controller:ChoosePvdTypeCtrl, templateUrl:'tpl/choosePvdType.html'}).
             when('/createpvd', {controller:EditPvdCtrl, templateUrl:'tpl/editPvd.html'}).
-            when('/editpvd', {controller:EditPvdCtrl, templateUrl:'tpl/editPvd.html'}).
+            when('/editpvd/:id', {controller:EditPvdCtrl, templateUrl:'tpl/editPvd.html'}).
             otherwise({redirectTo:'/'});
     });
 

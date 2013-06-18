@@ -4,6 +4,7 @@
         <table>
             <thead>
             <tr>
+				<th>Enabled</th>
                 <th>Name</th>
                 <th>Type</th>
                 <th>ActionUrl</th>
@@ -11,6 +12,7 @@
             </thead>
             <tbody>
                 <tr ng-repeat="pvd in providers">
+					<td>{{pvd.enabled}}</td>
                     <td>{{pvd.name}}</td>
                     <td>{{pvd.type}}</td>
                     <td>{{pvd.actionUrl}}</td>
@@ -19,5 +21,7 @@
             </tbody>
         </table>
         <button ng-click="addNewPvd()">Add new provider</button>
+		<button ng-click="clearAll()">Clear</button>
+		<button ng-click="populate()">Populate</button>
     </div>
 </div>
