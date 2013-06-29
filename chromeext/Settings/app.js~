@@ -4,7 +4,7 @@ var dsApp=angular.module('settingsApp', []).
             when('/', {controller:ViewCtrl, templateUrl:'tpl/view.html'}).
        /*     when('/edit/:projectId', {controller:EditCtrl, templateUrl:'detail.html'}).*/
             when('/choosenew', {controller:ChoosePvdTypeCtrl, templateUrl:'tpl/choosePvdType.html'}).            
-            when('/edit/:id', {controller:EditPvdCtrl, templateUrl:'tpl/editPvd.html'}).
+            when('/edit/:id', {controller:UrlActionEditPvdCtrl, templateUrl:'urlAction/tpl/editPvd.html'}).
             when('/choosetemplate', {controller:ChooseTemplateCtrl, templateUrl:'tpl/choosetmpl.html'}).
             otherwise({redirectTo:'/'});
     });
@@ -17,8 +17,6 @@ dsApp.directive('myHtml', function () {
         });
     }
 });
-
-
 
 
 

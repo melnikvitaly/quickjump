@@ -12,10 +12,9 @@ var res=[
 		sDT: "FogBugz",
 		aU:"https://workshare.fogbugz.com/?{0}",
 		pR: "[0-9]+",
-		dU: "https://workshare.fogbugz.com",
-		pT:"fogbugz"
+		dU: "https://workshare.fogbugz.com"
 	},
-	{			
+	{
 		e:"false",
 		t:URLACTION_T,
 		id:"workshareGitHub",
@@ -25,8 +24,7 @@ var res=[
 		sDT: "WSP GitHub",
 		aU:"https://github.com/workshare/ws7/commits/task-{0}",
 		pR: "[0-9]+",
-		dU:"https://github.com/workshare/ws7",
-		pT:"workshareGitHub"
+		dU:"https://github.com/workshare/ws7"
 	}
 ];
 

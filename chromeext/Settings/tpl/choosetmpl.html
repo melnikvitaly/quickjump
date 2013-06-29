@@ -1,0 +1,16 @@
+<div>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Desc</th>			
+		</tr>
+		<tr ng-repeat="pvd in providers">
+			<td>{{pvd.name}}</td>
+			<td>{{pvd.description}}</td>
+			<td><button ng-click="select(pvd)">Select</button></td>			
+		</tr>
+	</table>
+	<div>
+		<button ng-click="back()">Back</butoon>
+	</div>
+</div>                   

@@ -1,0 +1,18 @@
+function UrlActionEditPvdCtrl($scope,$routeParams,settingStorage){
+	var pId=$routeParams.id;    
+    $scope.back=function(){window.location = "#/";};        
+	settingStorage.getProviderById(pId,function (val){		
+		if(val){
+			Utils.apply($scope,function(){
+				$scope.provider=val;
+			});
+		}
+		else{ $scope.back();}
+	});
+	
+    $scope.save=function(){
+		settingStorage.saveProvider($scope.provider,function(){
+			window.location = "#/";
+		});        
+    }
+}

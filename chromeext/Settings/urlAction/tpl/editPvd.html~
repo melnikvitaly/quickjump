@@ -1,0 +1,6 @@
+<div>
+
+		<div>
+			<span>Action Url :</span><input type="text" ng-model="provider.actionUrl" />
+		</div>
+</div>

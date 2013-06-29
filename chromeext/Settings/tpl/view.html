@@ -4,24 +4,24 @@
         <table>
             <thead>
             <tr>
-				<th>Enabled</th>
+		<th>Enabled</th>
                 <th>Name</th>
-                <th>Type</th>
-                <th>ActionUrl</th>
+                <th>Type</th>                
             </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="pvd in providers">
-					<td>{{pvd.enabled}}</td>
+                    <td><input type="checkbox" disabled="disabled" ng-model="pvd.enabled"/></td>
                     <td>{{pvd.name}}</td>
-                    <td>{{pvd.type}}</td>
-                    <td>{{pvd.actionUrl}}</td>
-                    <td><button ng-click="edit(pvd)"/>></td>
+                    <td>{{pvd.type}}</td>                    
+                    <td><button ng-click="edit(pvd)"/>edit</td>
+                    <td><button ng-click="remove(pvd)"/>remove</td>
                 </tr>
             </tbody>
         </table>
-        <button ng-click="addNewPvd()">Add new provider</button>
-		<button ng-click="clearAll()">Clear</button>
-		<button ng-click="populate()">Populate</button>
+        <button ng-click="addNewPvd()">Add new provider from templates</button>
+        <button ng-click="addNewCustomPvd()">Add custom provider</button>
+	<button ng-click="clearAll()">Clear</button>
+	<button ng-click="populate()">Populate</button>
     </div>
 </div>

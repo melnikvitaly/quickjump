@@ -1,3 +1,3 @@
-function UrlActionEditCtrl($scope){
-
+function UrlActionEditPvdCtrl($scope,$routeParams,settingStorage){
+	
 }

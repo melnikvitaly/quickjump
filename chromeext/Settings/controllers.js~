@@ -54,7 +54,7 @@ function EditPvdCtrl($scope,$routeParams,settingStorage){
 	var pId=$routeParams.id;    
     
 	$scope.save=function(provider){
-		if(!form.$invalid)		{
+		if(provider.$valid)		{
 			settingStorage.saveProvider(provider,function(){
 				window.location = "#/";
 			});
