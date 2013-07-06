@@ -1,9 +1,9 @@
 var URLACTION_T="urlAction";
 var Conf={
 	pvdTypes:[],
-	regType : function(type,ctor){	
+	regType : function(type,ctor,editTmpl){	
 	if(Conf.pvdTypes[type]) throw "already registered "+type;
-	Conf.pvdTypes[type]={ctor:ctor};
+	Conf.pvdTypes[type]={ctor:ctor, editUrl:editTmpl};
 }};
 var BaseProvider=klass(function(config){
 	this.id=config.id;
@@ -92,9 +92,7 @@ serialize:function(){
 	getMenuDisplayText:function(ctx){		
 		var processed=this.processParams(ctx.params);
 		return this.getMenuDisplayTextInternal(processed);
-	},
-	getEditUrl:function(){return null}
-	
+	}	
 });
 
 var providerFactory={
@@ -126,4 +124,4 @@ var providerFactory={
 	}
 };	
 
-Conf.regType(URLACTION_T,UrlActionProvider);
+Conf.regType(URLACTION_T,UrlActionProvider,'/settings/urlAction/tpl/editPvd.html');

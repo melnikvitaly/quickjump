@@ -1,16 +1,28 @@
-<div>
-	<div>Edit page for {{provider.name}}</div>
+<div class="content">		
 	<form name="form" novalidate class="css-form">
-		<div>
-			<span>Enabled</span><input  type="checkbox" ng-model="provider.enabled" />
-		</div>
-		<div>
-			<span>Name : </span><input name="name"  type="text" ng-model="provider.name"  required/>
+		<table class="imagetable editpvdtable">
+			<tr>
+				<th>Prperty</th>
+				<th>Value</th>
+			</tr>
+			<tr>
+				<td>Enabled</td>             
+				<td><input  type="checkbox" ng-model="provider.enabled" /></td
+			</tr>
+			<tr>
+				<td>Name</td>
+				<td><input name="name"  type="text" ng-model="provider.name"  required/></td>
+			</tr>
+			<tr>
+				<td>Menu display text</td>
+				<td><input name=""  type="text" ng-model="provider.name"  required/></td>
+			</tr>
 			<span class="error" ng-show="form.name.$error.required">Required!</span>
+		</table>		
+		<div ng-include src="editUrl">
 		</div>
-		<ng-include src="editUrl"></ng-include >
-	</form>	
-	<div>
+	</form>		
+	<div class="buttonstrip mainbuttonstrip">
         <button ng-click="save(provider)">Save</button>
         <button ng-click="back()">Back</button>
     </div>	

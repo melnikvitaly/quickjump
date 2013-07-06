@@ -1,5 +1,5 @@
 <div class="content" ng-init="$parent.pagetitle='Select template'">
-	<table class="imagetable choosetemplatetable">
+	<table class="imagetable">
 		<tr>
 			<th>Name</th>
 			<th>Description</th>

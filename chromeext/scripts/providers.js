@@ -9,7 +9,8 @@ var BaseProvider=klass(function(config){
 	this.id=config.id;
 	this.name=config.n;
 	this.displayText=config.dT;
-	this.formatDisplayText=config.fDT;
+	this.description=config.d;
+	//this.formatDisplayText=config.fDT;
 	this.shortDisplayText=config.sDT;
 	this.type=config.t
 	this.enabled=config.e=="true";
@@ -22,17 +23,18 @@ var BaseProvider=klass(function(config){
 			res.t=this.type
 			res.n=this.name;
 			res.dT=this.displayText;
-			res.fDT=this.formatDisplayText;
+		//	res.fDT=this.formatDisplayText;
 			res.sDT=this.shortDisplayText;
 			res.e=this.enabled?"true":"false";
 			res.pT=this.protoId;
+			res.d=this.description;
 			return res;
 		},	
 		
 	getMenuDisplayTextInternal:function (params){
 		var res=this.displayText;
 		if(params){
-			res=this.formatDisplayText;
+			//res=this.displayText;
 			var index=0;
 			for(var i in params){
 				var param=params[i];

@@ -1,4 +1,5 @@
-function ViewCtrl($scope,settingStorage,settingsService){    
+
+function ViewCtrl($scope, settingStorage,settingsService){    
 	$scope.providers=[];
 	
     $scope.addNewPvd=function(){
@@ -52,7 +53,7 @@ function ViewCtrl($scope,settingStorage,settingsService){
 
 function EditPvdCtrl($scope,$routeParams,settingStorage){
 	var pId=$routeParams.id;    
-    
+	    
 	$scope.save=function(provider){
 		if(!form.$invalid)		{
 			settingStorage.saveProvider(provider,function(){
@@ -66,10 +67,10 @@ function EditPvdCtrl($scope,$routeParams,settingStorage){
 		if(val){
 			Utils.apply($scope,function(){
 				$scope.provider=val;
+				$scope.$parent.pagetitle='Edit page for '+val.name;
 				$scope.editUrl=Conf.pvdTypes[val.type].editUrl;				
 			});
-		}
-		//else{ $scope.back();}
+		}		
 	});
 	
     
