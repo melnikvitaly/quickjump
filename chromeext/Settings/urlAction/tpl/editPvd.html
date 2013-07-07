@@ -1,8 +1,16 @@
 <div ng-controller="UrlActionEditPvdCtrl">
 	<table  class="imagetable editpvdtable">
+		<tr>
+			<td>Parameter regex</td>
+			<td><input name="paramRegex"  type="text" ng-model="provider.paramRegex"  required/></td>
+		</tr>						
 		<tr>			
-			<td>Action Url :</td>
-			<td><textarea ng-model="provider.actionUrl" /></td>
+			<td>Action Url</td>
+			<td><textarea name="actionUrl" ng-model="provider.actionUrl" /></td>
 		</tr>
+		<tr>
+			<td>Default url</td>
+			<td><input name="defaultUrl"  type="text" ng-model="provider.defaultUrl"  required/></td>
+		</tr>						
 	</table>
 </div>

@@ -1,8 +1,16 @@
 <div>
     Choose pvd type
-    <div ng-repeat="type in types"  >
-         {{type}}
-         <button ng-click="select(type)">-</button>
+    <table>    	
+		<tr ng-repeat="type in types"  >
+			<td>
+			 {{type}}
+			</td>
+			<td>
+			 <button ng-click="select(type)">-</button>
+			</td>
+		</tr>
+    </table>
+    <div class="buttonStrip">
+    	<button ng-click="back()">Back</button>
     </div>
-    <button ng-click="back()">Back</button>
 </div>

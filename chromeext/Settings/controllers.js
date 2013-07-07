@@ -2,7 +2,7 @@
 function ViewCtrl($scope, settingStorage,settingsService){    
 	$scope.providers=[];
 	
-    $scope.addNewPvd=function(){
+    $scope.addNewCustomPvd=function(){
 		settingsService.mode="new";
         window.location = "#/choosenew";
     },

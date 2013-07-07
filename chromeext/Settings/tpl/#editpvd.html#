@@ -6,7 +6,7 @@
 				<th>Value</th>
 			</tr>
 			<tr>
-				<td>Enabledsad</td>             
+				<td>Enabled</td>             
 				<td><input  type="checkbox" ng-model="provider.enabled" /></td
 			</tr>
 			<tr>
