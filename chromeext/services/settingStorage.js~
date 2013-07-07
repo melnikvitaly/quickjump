@@ -12,16 +12,21 @@ dsApp.factory("settingStorage",function($rootScope){
 					});			
 				
 		};
-		self.getEnabledProviders=function (callback){
-			self.getProviders(function(val){			
-				callback(val.filter(function (o){
-					return o.enabled;
-				}));
+	self.getProviderById=function(pId,callback){							
+			self.getProviders(function(arr){				
+				callback(Utils.getByProp(arr,"id",pId)); 
 			});
-		},
-		self.getTypes=function(callback){
-			callback([URLACTION_T]);				
-		};
+	};
+	self.getEnabledProviders=function (callback){
+		self.getProviders(function(val){			
+			callback(val.filter(function (o){
+				return o.enabled;
+			}));
+		});
+	},
+	self.getTypes=function(callback){
+		callback([URLACTION_T]);				
+	};
 		
 	self.saveProvider=function(pvd,callback){
 			var data=chrome.storage.sync.get('s',function(val){

@@ -1,4 +1,4 @@
-var URLACTION_T="urlAction";
+var URLACTION_T="jump to url";
 var Conf={
 	pvdTypes:[],
 	regType : function(type,ctor,editTmpl){	
@@ -10,7 +10,6 @@ var BaseProvider=klass(function(config){
 	this.name=config.n;
 	this.displayText=config.dT;
 	this.description=config.d;
-	//this.formatDisplayText=config.fDT;
 	this.shortDisplayText=config.sDT;
 	this.type=config.t
 	this.enabled=config.e=="true";
@@ -22,8 +21,7 @@ var BaseProvider=klass(function(config){
 			res.id=this.id;
 			res.t=this.type
 			res.n=this.name;
-			res.dT=this.displayText;
-		//	res.fDT=this.formatDisplayText;
+			res.dT=this.displayText;		
 			res.sDT=this.shortDisplayText;
 			res.e=this.enabled?"true":"false";
 			res.pT=this.protoId;
@@ -111,7 +109,7 @@ var providerFactory={
 	},
 	createObj: function (data){
 		var regInfo=Conf.pvdTypes[data.t];		
-		if(regInfo){
+		if(regInfo){                      
 			return new regInfo.ctor(data);
 		}					
 		return null;
@@ -123,6 +121,23 @@ var providerFactory={
 		else{
 			return createObj(obj);
 		}
+	},
+	createCustom:function(type){
+		var regInfo=Conf.pvdTypes[type];		
+		if(regInfo){                      
+			var obj= new regInfo.ctor(
+				{
+					id:Utils.guid(),
+					t:type,
+					pT:"",
+					dT:"custom provider",
+					sDT:"custom",
+					n:'custom provider',					
+				});
+			
+			return obj;
+		}					
+		return null;
 	}
 };	
 

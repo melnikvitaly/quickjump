@@ -59,10 +59,10 @@ dsApp.factory("settingStorage",function($rootScope){
 					}													
 					chrome.storage.sync.set({'s':obj},callback);	
 				});								
+		};
+		self.reset=function(callback){
+			chrome.storage.sync.clear(callback);								
 		}
-		
-		
-		
 }});	
 
 

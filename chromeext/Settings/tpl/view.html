@@ -1,5 +1,6 @@
-<div ng-model="types" class="content" ng-init="$parent.pagetitle='All providers';" >	    
-    	<table class="imagetable">
+<div ng-model="types"  ng-init="$parent.pagetitle='All providers';" >
+<div class="content">
+    	<table ng-show="providers.length" class="table table-striped">
 				<thead>
 				<tr>
 					<th>Enabled</th>
@@ -14,16 +15,29 @@
 						<td>{{pvd.name}}</td>
 						<td>{{pvd.type}}</td>                    
 						<td>
-							<button class="toolbutton configurebutton" ng-click="edit(pvd)"/>
-							<button class="toolbutton removebutton" ng-click="remove(pvd)"/>
+							<div class="btn-toolbar">
+								<div class="btn-group">
+									<button class="btn" ng-click="edit(pvd)">
+										<i class="icon-pencil"></i>
+									</button>
+									<button class="btn" ng-click="remove(pvd)">
+									 	<i class="icon-trash"></i>
+									</button>
+								</div>
+							</div>
 						</td>                    
 					</tr>
 				</tbody>
-		</table>        
-        <div class="buttonstrip mainbuttonstrip">
-			<button ng-click="addNewPvd()">Add new provider from templates</button>
-			<button ng-click="addNewCustomPvd()">Add custom provider</button>
-			<button ng-click="clearAll()">Clear</button>
-			<button ng-click="populate()">Populate</button>
-        </div>
-<div>
+		</table>    
+		<div ng-hide="providers.length" class="container-fluid noitems">
+			No providers to display<br/>
+			Add new providers to use this plugin
+		</div>        
+</div>
+<div class="buttonstrip mainbuttonstrip">
+			<button class="btn" ng-click="addNewPvd()"><i class="icon-plus"></i>Add from templates</button>
+			<button class="btn" ng-click="addNewCustomPvd()"><i class="icon-plus"></i>Add custom</button>
+			<button class="btn" ng-click="clearAll()"><i class="icon-exclamation-sign"></i>Clear all data</button>
+			<!--<button class="btn" ng-click="populate()">Populate</button>-->
+</div>
+</div>

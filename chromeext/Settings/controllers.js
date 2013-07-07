@@ -1,4 +1,7 @@
-
+function MainCtrl($scope){
+	var details=chrome.app.getDetails();
+	$scope.appName=details.name+" "+ details.version;
+}
 function ViewCtrl($scope, settingStorage,settingsService){    
 	$scope.providers=[];
 	
@@ -27,8 +30,11 @@ function ViewCtrl($scope, settingStorage,settingsService){
 	};
 	
 	$scope.clearAll=function(){
-			chrome.storage.sync.clear();
-			$scope.refreshProviders();
+			if(confirm('All data will be lost. Do you want continue?')){
+				settingStorage.reset(function(){						
+						$scope.refreshProviders();
+					});
+			}
 		};
 		
 	$scope.populate=function(){
@@ -51,7 +57,7 @@ function ViewCtrl($scope, settingStorage,settingsService){
 	$scope.refreshProviders();
 }
 
-function EditPvdCtrl($scope,$routeParams,settingStorage){
+function EditPvdCtrl($scope,$routeParams,settingStorage,descService){
 	var pId=$routeParams.id;    
 	    
 	$scope.save=function(provider){
@@ -59,8 +65,11 @@ function EditPvdCtrl($scope,$routeParams,settingStorage){
 			settingStorage.saveProvider(provider,function(){
 				window.location = "#/";
 			});
-		}        
-    }
+		}        		
+    };
+    $scope.getDesc=function(prop){
+			return descService.pvdprop(provider.type,prop);
+		};
     $scope.back=function(){window.location = "#/";};
 	
 	settingStorage.getProviderById(pId,function (val){		
@@ -81,7 +90,11 @@ function ChoosePvdTypeCtrl($scope,settingStorage,settingsService){
 	
     $scope.select=function(type){
 		settingsService.type=type;
-        window.location = "#/createpvd";
+		var newPvd=providerFactory.createCustom(type);
+		settingStorage.saveProvider(newPvd,function(){
+			window.location = "#/edit/"+newPvd.id;
+		});
+        
     }
     $scope.back=function(){
         window.location = "#/";

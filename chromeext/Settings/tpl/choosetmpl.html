@@ -1,5 +1,5 @@
 <div class="content" ng-init="$parent.pagetitle='Select template'">
-	<table class="imagetable choosetemplatetable">
+	<table class="table table-striped">
 		<tr>
 			<th>Name</th>
 			<th>Description</th>
@@ -8,10 +8,18 @@
 		<tr ng-repeat="pvd in providers">
 			<td>{{pvd.name}}</td>
 			<td>{{pvd.description}}</td>
-			<td><button class="toolbutton selectbutton" ng-click="select(pvd)"></button></td>			
+			<td>
+				<div class="btn-toolbar">
+								<div class="btn-group">
+									<button class="btn" ng-click="select(pvd)">
+									 	<i class="icon-plus"></i>
+									</button>									
+								</div>
+				</div>
+			</td>			
 		</tr>
 	</table>
 	<div class="buttonstrip">
-		<button ng-click="back()">Back</butoon>
+		<button class="btn" ng-click="back()">Back</butoon>
 	</div>
 </div>                   

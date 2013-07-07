@@ -21,22 +21,19 @@ chrome.contextMenus.onClicked.addListener(onClickHandler);
 
 chrome.extension.onMessage.addListener(function(msg, sender, sendResponse) {
   if (msg.request == "updateContextMenu") {    
-		settingsS.getEnabledProviders(function(val){
+		settingsS.getProviders(function(val){
 			var ctx={params:[msg.selection]};
-			chrome.contextMenus.removeAll(function(){
-				menus.length=0;;
-				for(var i in val){
-					var provider=val[i];				
-					var menuText=provider.getMenuDisplayText(ctx);
-					if(menus.indexOf(provider.id)!=-1){
-						chrome.contextMenus.update(provider.id, {"title":menuText });
-					}
-					else{
-						chrome.contextMenus.create({"id":provider.id ,"title": menuText, "contexts":["all"]});					;
-						menus.push(provider.id);
-					}
+			for(var i in val){
+				var provider=val[i];				
+				var menuText=provider.getMenuDisplayText(ctx);
+				if(menus.indexOf(provider.id)!=-1){
+					chrome.contextMenus.update(provider.id, {"title":menuText });
 				}
-			});
+				else{
+					chrome.contextMenus.create({"id":provider.id ,"title": menuText, "contexts":["all"]});					;
+					menus.push(provider.id);
+				}
+			}
 		});
     }
 });

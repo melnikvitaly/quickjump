@@ -1,16 +1,25 @@
-<div>
-    Choose pvd type
-    <table>    	
-		<tr ng-repeat="type in types"  >
+<div ng-init="$parent.pagetitle='Choose provider type'">    
+    <table class="table table-striped">
+    	<tr>
+    		<th>Type</th>
+    		<th></th>
+    	</tr>
+		<tr ng-repeat="type in types">
 			<td>
 			 {{type}}
 			</td>
 			<td>
-			 <button ng-click="select(type)">-</button>
+				<div class="btn-toolbar">
+					<div class="btn-group">
+						<button class="btn" ng-click="select(type)">
+							<i class="icon-plus"></i>
+						</button>									
+					</div>
+				</div>			 
 			</td>
 		</tr>
     </table>
-    <div class="buttonStrip">
-    	<button ng-click="back()">Back</button>
+    <div class="buttonstrip">
+    	<a class="btn" ng-click="back()">Back</a>
     </div>
 </div>

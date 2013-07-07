@@ -1,11 +1,11 @@
 <!doctype html>
 <html ng-app="settingsApp">
-  <head>
-  	<!--<link rel="stylesheet" type="text/css" href="/asserts/css/settings.css"/>--> 
-  	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <head>  	 
+  	<link href="/third/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  	<link rel="stylesheet" type="text/css" href="/asserts/css/settings.css"/>
 	<script src="/third/angular/angular.js"></script>
     <script src="/third/klass/klass.js"></script>
-     <script src="/third/bootstrap/js/bootstrap.min.js"></script>
+    <!--<script src="/third/bootstrap/js/bootstrap.min.js"></script>-->
 	
 	<script src="/scripts/utils.js"></script>	
 	<script src="/scripts/providers.js"></script>
@@ -20,25 +20,28 @@
 	
 	<script src="/settings/urlAction/controllers.js"></script>
   </head>
-  <body>
-  	<div id="header">
-  	<h1>{{pagetitle}}</h1>
-  	</div>
-  	<div id="main">  	
-		<div id="col1" >
-			
-		</div>
-		<div id="col2">
-			<div id="col2-1" ng-view>
-				
+  <body ng-controller="MainCtrl">
+  <div class="container-fluid">
+		<div class="row-fluid header">
+			<div class="span12">
+				<h1>{{pagetitle}}</h1>
 			</div>
-			<div id="col2-2" >
-			
+		</div>  	  	  	
+		<div class="row-fluid main">
+			<div class="span3">
 			</div>
+			<div class="span6">
+				<div ng-view>
+					
+				</div>
+			</div>
+			<div class="span3">
+			</div>				
 		</div>
+		
   	</div>
-  	<div id="footer">
-  	QucikJump, <a href="mailto:melnikvitaly@gmail.com">melnikvitaly@gmail.com</a>
-  	</div>
+  	<div class="navbar navbar-fixed-bottom footer">	  	
+			{{appName}} , <a href="mailto:melnikvitaly@gmail.com">melnikvitaly@gmail.com</a>
+	</div>
   </body>
 </html>
