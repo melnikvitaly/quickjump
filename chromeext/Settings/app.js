@@ -8,14 +8,21 @@ var dsApp=angular.module('settingsApp', []).
             otherwise({redirectTo:'/'});
     });
 
-dsApp.directive('myHtml', function () {
-    return function (scope, element, attrs) {
-        element.html(attrs.myHtml);
-        scope.$watch(attrs.myHtml, function (value) {
-           element.html(attrs.myHtml);
-        });
-    }
-});
+dsApp.directive('helpsign', function factory() {
+  var directiveDefinitionObject = {    
+    replace: false,	
+    transclude: false,
+    restrict: 'E',
+    scope: false,    
+    compile: function(element, attrs) {      
+      var el =$('<a class="helpsign"><i class="icon-question-sign"></i></a>');	  
+	  el.attr('title',element.text());
+      element.replaceWith(el);
+	  el.tooltip({placement:"right"});
+    },
+  };
+  return directiveDefinitionObject;
+})
 
 
 

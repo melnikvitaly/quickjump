@@ -3,11 +3,17 @@
 		<table class="table table-striped editpvdtable">			
 			<tr>
 				<td>Enabled</td>             
-				<td><input  type="checkbox" ng-model="provider.enabled" /></td
+				<td>					
+						<input type="checkbox" ng-model="provider.enabled" />
+						<helpsign>Enable disable this provider</helpsign>					
+				</td>
 			</tr>
 			<tr>
 				<td>Name</td>
-				<td><input name="name"  type="text" ng-model="provider.name"  required/></td>
+				<td>					
+					<input name="name"  type="text" ng-model="provider.name"  required/>
+					<helpsign>Name for this provider</helpsign>
+				</td>
 				
 			</tr>
 			<tr>

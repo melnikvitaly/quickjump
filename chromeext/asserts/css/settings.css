@@ -34,9 +34,16 @@ body{
 	text-align:center;
 }
 
-.editpvdtable tr td:nth-child(2)>*{
+.editpvdtable tr td:nth-child(2) input{
 	width:90%;	
+	margin:0px;
 }
+
+.editpvdtable tr td:nth-child(2) .helpsign{
+	float:right;
+	width:auto;	
+}
+
 .choosetemplatetable th:nth-child(2){
 	width:400px;
 }
