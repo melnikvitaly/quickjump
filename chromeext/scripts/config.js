@@ -53,7 +53,21 @@ var res=[
 		d:"Search on ex.ua",
 		dU:"http://www.ex.ua/",
 		pT:"ex.ua"		
+	},	
+	{	
+		id:"grooveshark.com",
+		e:"true",
+		t:URLACTION_T,
+		n:"grooveshark",		
+		dT: "grooveshark '{0}'",
+		sDT: "grooveshark",		
+		pR: ".+",
+		aU:"http://grooveshark.com/#!/search?q={0}",
+		d:"Search on grooveshark.com",
+		dU:"http://grooveshark.com",
+		pT:"grooveshark.com"		
 	}
+	
 	
 ];
 
