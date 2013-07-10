@@ -3,8 +3,16 @@ body{
 	//margin:-24px;
 }
 
-.header, .footer{
+.main{
+margin-bottom:50px;
+}
+
+.header {
 	text-align:center;	
+}
+
+.footer{
+	text-align:right;		
 }
 .table th, .table td
 {
