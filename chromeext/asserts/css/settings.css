@@ -34,7 +34,8 @@ body{
 	text-align:center;
 }
 
-.editpvdtable tr td:nth-child(2) input{
+.editpvdtable tr td:nth-child(2) input,
+.editpvdtable tr td:nth-child(2) textarea{
 	width:90%;	
 	margin:0px;
 }

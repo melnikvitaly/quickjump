@@ -14,14 +14,27 @@ dsApp.directive('helpsign', function factory() {
     transclude: false,
     restrict: 'E',
     scope: false,    
-    compile: function(element, attrs) {      
+    compile: function(element, attrs) {      	
       var el =$('<a class="helpsign"><i class="icon-question-sign"></i></a>');	  
 	  el.attr('title',element.text());
       element.replaceWith(el);
+	  
 	  el.tooltip({placement:"right"});
     },
   };
   return directiveDefinitionObject;
+});
+
+dsApp.directive('tooltip', function () {
+    return {
+        restrict:'A',
+        link: function(scope, element, attrs)
+        {
+            $(element)
+                .attr('title',scope.$eval(attrs.tooltip))
+                .tooltip({placement: attrs.tooltipPlacement||"right"});
+        }
+    }
 })
 
 

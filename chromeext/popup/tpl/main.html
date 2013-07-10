@@ -3,7 +3,7 @@
 		<td><input type="text" ng-model="param" ui-keypress="{enter: 'executeDefault()'}" autofocus  /></td>
 		<td>
 			<div>
-				<button ng-repeat="pvd in providers"  ng-click="executePvd(pvd)">
+				<button class="btn" ng-repeat="pvd in providers"  ng-click="executePvd(pvd)">
 					{{pvd.name}}
 				</button>
 			</div>

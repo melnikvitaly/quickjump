@@ -4,16 +4,29 @@
 			<td>Parameter regex</td>
 			<td>
 				<input name="paramRegex"  type="text" ng-model="provider.paramRegex"  required/>
-				<a><i class="icon-question-sign"></i></a>
+				<helpsign>
+						Short display text for this provider.						
+				</helpsign>
 			</td>
 		</tr>						
 		<tr>			
 			<td>Action Url</td>
-			<td><textarea name="actionUrl" ng-model="provider.actionUrl" ></textarea></td>
+			<td>
+				<textarea name="actionUrl" ng-model="provider.actionUrl" ></textarea>
+				<helpsign>
+						Url on which user will be redirected after executing of provider. <br/>						
+						Url can include parameters using {0}.
+				</helpsign>
+			</td>
 		</tr>
 		<tr>
 			<td>Default url</td>
-			<td><input name="defaultUrl"  type="text" ng-model="provider.defaultUrl"  required/></td>
+			<td>
+				<input name="defaultUrl"  type="text" ng-model="provider.defaultUrl"  required/>
+				<helpsign>
+						Url on which user will be redirected after executing of  provider's default action.<br/>										
+				</helpsign>
+			</td>
 		</tr>		
 	</table>
 </div>

@@ -6,7 +6,7 @@
 					<th>Enabled</th>
 					<th>Name</th>
 					<th>Type</th>
-					<th>Action</th>                
+					<th></th>                
 				</tr>
 				</thead>
 				<tbody>
@@ -17,10 +17,10 @@
 						<td>
 							<div class="btn-toolbar">
 								<div class="btn-group">
-									<button class="btn" ng-click="edit(pvd)">
+									<button class="btn" ng-click="edit(pvd)" tooltip="'Edit'" tooltip-placement="top">
 										<i class="icon-pencil"></i>
 									</button>
-									<button class="btn" ng-click="remove(pvd)">
+									<button class="btn" ng-click="remove(pvd)" tooltip="'Delete'" tooltip-placement="top">
 									 	<i class="icon-trash"></i>
 									</button>
 								</div>

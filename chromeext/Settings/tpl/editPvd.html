@@ -18,11 +18,23 @@
 			</tr>
 			<tr>
 				<td>Display text</td>
-				<td><input name="displayName"  type="text" ng-model="provider.displayText"  required/></td>
+				<td>
+					<input name="displayName"  type="text" ng-model="provider.displayText"  required/>
+					<helpsign>
+						Display text for this provider.<br/> 
+						This property will be used in the context menu.<br/>
+						Use can use {0} to include parameters in the url if provider supports them.
+					</helpsign>
+				</td>
 			</tr>
 			<tr>
 				<td>Short display text</td>
-				<td><input name="shortDisplayName"  type="text" ng-model="provider.shortDisplayText"  required/></td>
+				<td>
+					<input name="shortDisplayName"  type="text" ng-model="provider.shortDisplayText"  required/>
+					<helpsign>
+						Short display text for this provider.						
+					</helpsign>
+				</td>
 			</tr>						
 		</table>		
 		<div ng-include src="editUrl">
