@@ -1,17 +1,21 @@
 {
-  "name": "",
-  "version": "0.0.5",
+  "name": "quickjump",
+  "version": "0.0.10",
   "description": "QuickJump",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+   "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.6.0",
     "grunt-contrib-nodeunit": "~0.2.0",
     "grunt-contrib-uglify": "~0.2.2",
-    "grunt-contrib-compress": "~0.5.2"
+    "grunt-contrib-compress": "~0.5.2",
+    "grunt-cli": "~0.1.9",
+    "grunt-contrib-clean": "~0.4.1",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-bump": "0.0.11"
   },
   "author": "",
   "license": "BSD"
