@@ -1,0 +1,10 @@
+<div>
+	<input type="text" ng-model="param" ui-keypress="{enter: 'executeDefault()'}" autofocus  />
+</div>
+<div class="buttons">
+	<ul>
+		<li ng-repeat="pvd in providers">
+			<button class="btn"   ng-click="executePvd(pvd)">{{pvd.name}}</button>
+		</li>
+	</ul>
+</div>

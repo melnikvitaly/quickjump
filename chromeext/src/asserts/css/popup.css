@@ -1,0 +1,9 @@
+input[type="text"]{
+	margin:0px;
+}
+
+.buttons li{
+	display: inline;
+	list-style-type: none;
+	padding-right: 0px;
+}
