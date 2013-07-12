@@ -1,4 +1,4 @@
-QuickJump allows users to safe their time and quickly pass needed data to any resource which provides direct url pattern to search information.
+QuickJump allows users to save their time and quickly pass needed data to any resource which provides direct url pattern to search information.
 
 Users can easy configure parametrized URLs to quickly jump to any item or search results on most popular resources.
 Users can just select text for search, item id, address of building etc from web page and using right click quickly jump to appropriate item on the other resource.
@@ -23,3 +23,5 @@ Using via popup window:
 1. Click on plugin button.
 2. Enter text you want pass to some resource
 3. Click on appropriate provider button to jump to linked resource.
+
+Save you time!
