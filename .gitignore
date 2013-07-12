@@ -3,3 +3,5 @@ obj
 *.suo
 /chromeext/node_modules
 /chromeext/build
+
+/chromeext/topublish

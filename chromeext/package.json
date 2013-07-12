@@ -1,6 +1,6 @@
 {
   "name": "quickjump",
-  "version": "0.0.10",
+  "version": "0.0.18",
   "description": "QuickJump",
   "main": "index.js",
   "scripts": {

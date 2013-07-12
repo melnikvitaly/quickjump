@@ -26,47 +26,24 @@ module.exports = function(grunt) {
 		jshint:{
 			all:['src/scripts/*.js']
 			//ignores:["src/third/**"]
-		},
-		 uglify: {								
-						options: {
-						 // banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-						 compress:true
-						},
-						build: {
-							files:{
-								"build/scripts/settings.min.js":[
-									  'src/scripts/config.js',
-									  'src/scripts/providers.js',
-									  'src/scripts/utils.js'
-									  ],
-								"build/scripts/popup.min.js":[
-									  'src/scripts/config.js',
-									  'src/scripts/providers.js',
-									  'src/scripts/utils.js'
-									  ]				  
-						}
-					}						
-			  },
-			compress:{
+		},		
+		compress:{
 				main:{
 					options:{
 						archive:"topublish/quickjump.zip"						
 					},
 					files:[
-							{expand:true,cwd:"build/" ,src:["**"]}
+						{expand:true,cwd:"build/" ,src:["**"]}
 					]
 				}
 			}
 	  });
-	
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
+		
 	grunt.loadNpmTasks('grunt-contrib-compress');
 	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-copy');	
 	grunt.loadNpmTasks('grunt-bump');
-	
-	grunt.registerTask('default', ["clean","jshint:all","copy","bump",]);
-	grunt.registerTask('"release', ["clean","uglify:","compress","bump",]);
+		
+	grunt.registerTask('default', ["clean","copy","compress","bump",]);
 }
 

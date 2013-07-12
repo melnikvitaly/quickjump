@@ -3,7 +3,7 @@
 
   "name": "QuickJump",
   "description": "Quick jumps to sites",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "icons": { "128": "/asserts/images/icon.png" },
   "content_scripts": [{
 	"all_frames": true,

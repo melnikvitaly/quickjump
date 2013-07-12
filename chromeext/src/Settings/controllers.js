@@ -2,24 +2,24 @@ function MainCtrl($scope){
 	var details=chrome.app.getDetails();
 	$scope.appName=details.name+" "+ details.version;
 }
-function ViewCtrl($scope, settingStorage,settingsService){    
+function ViewCtrl($scope, settingStorage){    
 	$scope.providers=[];
 	
-    $scope.addNewCustomPvd=function(){
-		settingsService.mode="new";
+    $scope.addNewCustomPvd=function(){		
         window.location = "#/choosenew";
     },
     $scope.addNewPvd=function(){
 		window.location = "#/choosetemplate";
     }
     $scope.edit=function(pvd){
-		settingsService.mode="edit";		
         window.location="#/edit/"+pvd.id;
     };
     $scope.remove=function(pvd){
-		settingStorage.removeProvider(pvd,function(){
-			$scope.refreshProviders();
-		});		        
+		if(confirm('Provider "'+pvd.name+'" will be removed. Do you want continue?')){
+			settingStorage.removeProvider(pvd,function(){
+				$scope.refreshProviders();
+			});		        
+		}
     };
 	$scope.refreshProviders=function(){
 		settingStorage.getProviders(function(val){
@@ -57,7 +57,7 @@ function ViewCtrl($scope, settingStorage,settingsService){
 	$scope.refreshProviders();
 }
 
-function EditPvdCtrl($scope,$routeParams,settingStorage,descService){
+function EditPvdCtrl($scope,$routeParams,settingStorage){
 	var pId=$routeParams.id;    
 	    
 	$scope.save=function(provider){
@@ -66,10 +66,7 @@ function EditPvdCtrl($scope,$routeParams,settingStorage,descService){
 				window.location = "#/";
 			});
 		}        		
-    };
-    $scope.getDesc=function(prop){
-			return descService.pvdprop(provider.type,prop);
-		};
+    };  
     $scope.back=function(){window.location = "#/";};
 	
 	settingStorage.getProviderById(pId,function (val){		
@@ -85,11 +82,10 @@ function EditPvdCtrl($scope,$routeParams,settingStorage,descService){
     
 }
 
-function ChoosePvdTypeCtrl($scope,settingStorage,settingsService){
+function ChoosePvdTypeCtrl($scope,settingStorage){
     $scope.types=[];
 	
-    $scope.select=function(type){
-		settingsService.type=type;
+    $scope.select=function(type){	
 		var newPvd=providerFactory.createCustom(type);
 		settingStorage.saveProvider(newPvd,function(){
 			window.location = "#/edit/"+newPvd.id;

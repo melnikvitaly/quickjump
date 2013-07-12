@@ -1,0 +1,25 @@
+QuickJump allows users to safe their time and quickly pass needed data to any resource which provides direct url pattern to search information.
+
+Users can easy configure parametrized URLs to quickly jump to any item or search results on most popular resources.
+Users can just select text for search, item id, address of building etc from web page and using right click quickly jump to appropriate item on the other resource.
+
+Plugin works like "Search Google for" right click menu but for any site you want.
+
+Steps to use:
+
+1. After installing of QuickJump plugin go to Settings page
+2. Create providers for any resource you want jump to. (You can use provider from templates list or create fully new provider)
+3. Edit provider properties to want you need.
+4. Most of templates need to be edited after adding because these URLs are user specific.
+5. After configuring of providers you can use them via rightclick menu or button in pupup window.
+
+
+Using via right click:
+1. select some text that should be passed to other site.
+2. Rigth click 
+3. Select provider which configured for site you are interested in.
+
+Using via popup window:
+1. Click on plugin button.
+2. Enter text you want pass to some resource
+3. Click on appropriate provider button to jump to linked resource.
